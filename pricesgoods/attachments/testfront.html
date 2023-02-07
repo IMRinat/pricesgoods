@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>TestFront</title>
+<script>
+	function geturl(url) {
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', url, false);
+		xhr.send();
+		return xhr;
+	}
+
+	function clickstat() {
+		var url = 'http://' + server.value + '/pricesgoods/stat';
+		var resp = geturl(url);
+		response.value = "Status " + resp.status + "\n" + resp.responseText;
+	}
+	
+	function clicklogapi() {
+		var url = 'http://' + server.value + '/pricesgoods/logApi';
+		var resp = geturl(url);
+		response.value = "Status " + resp.status + "\n" + resp.responseText;
+	}
+	
+	function clickgetprice() {
+		var url = 'http://' + server.value + '/pricesgoods/getprice/';
+		url += date1.value+'/'+namegood.value;
+		var resp = geturl(url);
+		response.value = "Status " + resp.status + "\n" + resp.responseText;
+	}
+	
+	function clickgetavgprice() {
+		var url = 'http://' + server.value + '/pricesgoods/getavgprice/';
+		url += dateavg1.value+'/'+dateavg2.value+'/'+nameavggood.value;
+		var resp = geturl(url);
+		response.value = "Status " + resp.status + "\n" + resp.responseText;
+	}
+	
+	function clickgetminmaxprice() {
+		var url = 'http://' + server.value + '/pricesgoods/getminmaxprice/';
+		url += datem1.value+'/'+datem2.value+'/'+namemgood.value;
+		var resp = geturl(url);
+		response.value = "Status " + resp.status + "\n" + resp.responseText;
+	}
+	
+	function clickinitfilecsv() {
+		var url = 'http://' + server.value + '/pricesgoods/initfilecsv';
+		var resp = geturl(url);
+		response.value = "Status " + resp.status + "\n" + resp.responseText;
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+	<div style="display: inline-block; justify; vertical-align: top;">
+		server <input id="server" type="text" value="localhost:8080">
+		<HR>
+		/stat
+		<button onclick="clickstat();">test /stat</button>
+		<HR>
+		/logApi
+		<button onclick="clicklogapi();">test /logApi</button>
+		<HR>
+		/getprice
+		<input id="date1" type="text" value="2013-04-14"  size="10">
+		<input id="namegood" type="text" value="urals" size="5">
+		<button onclick="clickgetprice();">test /getprice</button>
+		<HR>
+		/getavgprice
+		<input id="dateavg1" type="text" value="2013-04-10"  size="10">
+		<input id="dateavg2" type="text" value="2013-04-16"  size="10">
+		<input id="nameavggood" type="text" value="urals" size="5">
+		<button onclick="clickgetavgprice();">test /getavgprice</button>
+		<HR>
+		/getminmaxprice
+		<input id="datem1" type="text" value="2013-04-10"  size="10">
+		<input id="datem2" type="text" value="2013-04-16"  size="10">
+		<input id="namemgood" type="text" value="urals" size="5">
+		<button onclick="clickgetminmaxprice();">test /getminmaxprice</button>
+		<HR>
+		/initfilecsv
+		<button onclick="clickinitfilecsv();">test /initfilecsv</button>
+		<HR>
+	</div>
+	<div style="display: inline-block; justify; vertical-align: top;">
+		<textarea id="response" rows="30" cols="100"></textarea>
+	</div>
+</body>
+</html>

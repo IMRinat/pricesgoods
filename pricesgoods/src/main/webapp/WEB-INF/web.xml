@@ -1,0 +1,67 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>Initfilecsv</servlet-name>
+  	<display-name>Initfilecsv</display-name>
+  	<description></description>
+  	<servlet-class>pricesgoods.servlets.Initfilecsv</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Getprice</servlet-name>
+  	<display-name>Getprice</display-name>
+  	<description></description>
+  	<servlet-class>pricesgoods.servlets.Getprice</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Getavgprice</servlet-name>
+  	<display-name>Getavgprice</display-name>
+  	<description></description>
+  	<servlet-class>pricesgoods.servlets.Getavgprice</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Getminmax</servlet-name>
+  	<display-name>Getminmax</display-name>
+  	<description></description>
+  	<servlet-class>pricesgoods.servlets.Getminmax</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Stat</servlet-name>
+  	<display-name>Stat</display-name>
+  	<description></description>
+  	<servlet-class>pricesgoods.servlets.Stat</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LogApi</servlet-name>
+  	<display-name>LogApi</display-name>
+  	<description></description>
+  	<servlet-class>pricesgoods.servlets.LogApi</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Initfilecsv</servlet-name>
+  	<url-pattern>/initfilecsv</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Getprice</servlet-name>
+  	<url-pattern>/getprice/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Getavgprice</servlet-name>
+  	<url-pattern>/getavgprice/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Getminmax</servlet-name>
+  	<url-pattern>/getminmaxprice/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Stat</servlet-name>
+  	<url-pattern>/stat</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogApi</servlet-name>
+  	<url-pattern>/logApi</url-pattern>
+  </servlet-mapping>
+</web-app>
